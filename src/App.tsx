@@ -1,4 +1,5 @@
 import Avatar from 'components/Avatar'
+import Footer from 'components/Footer'
 import Header from 'components/Header'
 
 export default function () {
@@ -54,9 +55,9 @@ export default function () {
           dolorem quas velit omnis incidunt laboriosam quaerat necessitatibus!
           Est, eveniet. Doloremque, qui?
         </p>
-
         <Avatar />
       </div>
+      <Footer />
     </>
   )
 }
