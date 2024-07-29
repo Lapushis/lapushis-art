@@ -3358,6 +3358,8 @@ __metadata:
     jotai: "npm:^2.8.2"
     postcss: "npm:^8.4.38"
     preact: "npm:^10.22.0"
+    preact-iso: "npm:^2.6.3"
+    preact-render-to-string: "npm:^6.5.7"
     prettier: "npm:^3.2.5"
     rollup-plugin-visualizer: "npm:^5.12.0"
     tailwindcss: "npm:^3.4.3"
@@ -5313,6 +5315,25 @@ __metadata:
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.2.0"
   checksum: 10c0/955407b8f70cf0c14acf35dab3615899a2a60a26718a63c848cf3c29f2467b0533991b985a2b994430d890bd7ec2b1963e36352b0774a19143b5f591540f7c06
+  languageName: node
+  linkType: hard
+
+"preact-iso@npm:^2.6.3":
+  version: 2.6.3
+  resolution: "preact-iso@npm:2.6.3"
+  peerDependencies:
+    preact: ">=10"
+    preact-render-to-string: ">=6.4.0"
+  checksum: 10c0/dbc6526ed7f528468b3f250d9525a70c7c241f916a91fe4b71fe78218c511a4706e9b9d55b96385ce7f2b0c85cdc3fe84c7e1296a5d1200cc3695b894315b87c
+  languageName: node
+  linkType: hard
+
+"preact-render-to-string@npm:^6.5.7":
+  version: 6.5.7
+  resolution: "preact-render-to-string@npm:6.5.7"
+  peerDependencies:
+    preact: ">=10"
+  checksum: 10c0/39b2c56fbf32cb5c4f2c7119985bda786ee295229b998f9a1b4ba47755e6b64e4922b6f1e0edbcb154df1dbceb9c2dd1ca42ab4d900881aedcf5acd9f12c726e
   languageName: node
   linkType: hard
 

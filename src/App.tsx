@@ -1,63 +1,29 @@
-import Avatar from 'components/Avatar'
 import Footer from 'components/Footer'
 import Header from 'components/Header'
+import Main from 'components/Main'
+import { LocationProvider, Route, Router } from 'preact-iso'
 
 export default function () {
   return (
-    <>
+    <div className="min-h-screen flex flex-col justify-between bg-base-200">
       <Header />
-      <div className="container max-w-screen-lg mx-auto p-4 bg-base-200">
-        <h1 className="text-4xl font-bold">
-          Hi! <br />
-          I'm Lapushis, and this is my website WIP
-        </h1>
-        <div className="divider divider-neutral" />
-        <p className="prose text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          consequuntur culpa explicabo sed saepe soluta voluptates magni, non
-          dolorem quas velit omnis incidunt laboriosam quaerat necessitatibus!
-          Est, eveniet. Doloremque, qui?
-        </p>
-
-        <p className="prose text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          consequuntur culpa explicabo sed saepe soluta voluptates magni, non
-          dolorem quas velit omnis incidunt laboriosam quaerat necessitatibus!
-          Est, eveniet. Doloremque, qui?
-        </p>
-        <p className="prose text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          consequuntur culpa explicabo sed saepe soluta voluptates magni, non
-          dolorem quas velit omnis incidunt laboriosam quaerat necessitatibus!
-          Est, eveniet. Doloremque, qui?
-        </p>
-        <p className="prose text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          consequuntur culpa explicabo sed saepe soluta voluptates magni, non
-          dolorem quas velit omnis incidunt laboriosam quaerat necessitatibus!
-          Est, eveniet. Doloremque, qui?
-        </p>
-        <p className="prose text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          consequuntur culpa explicabo sed saepe soluta voluptates magni, non
-          dolorem quas velit omnis incidunt laboriosam quaerat necessitatibus!
-          Est, eveniet. Doloremque, qui?
-        </p>
-        <p className="prose text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          consequuntur culpa explicabo sed saepe soluta voluptates magni, non
-          dolorem quas velit omnis incidunt laboriosam quaerat necessitatibus!
-          Est, eveniet. Doloremque, qui?
-        </p>
-        <p className="prose text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          consequuntur culpa explicabo sed saepe soluta voluptates magni, non
-          dolorem quas velit omnis incidunt laboriosam quaerat necessitatibus!
-          Est, eveniet. Doloremque, qui?
-        </p>
-        <Avatar />
+      <div className="flex-grow container max-w-screen-lg mx-auto p-4 bg-base-100 prose">
+        <LocationProvider>
+          <Router>
+            <Route path="/" component={Main} />
+            <Route path="/gallery" component={() => <h1>Gallery</h1>} />
+            <Route
+              path="/prices-and-tos"
+              component={() => <h1>Prices and TOS</h1>}
+            />
+            <Route
+              default
+              component={() => <Route path="/" component={Main} />}
+            />
+          </Router>
+        </LocationProvider>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }

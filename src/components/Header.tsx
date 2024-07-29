@@ -12,13 +12,14 @@ const NavLinksContent = () => {
   return (
     <>
       <li>
-        <a class=" hover:text-primary">Gallery</a>
+        <a class=" hover:text-primary" href="/gallery">
+          Gallery
+        </a>
       </li>
       <li>
-        <a class=" hover:text-primary">Commissions</a>
-      </li>
-      <li>
-        <a class=" hover:text-primary">Terms of service</a>
+        <a class=" hover:text-primary" href="/prices-and-tos">
+          Prices and ToS
+        </a>
       </li>
     </>
   )
