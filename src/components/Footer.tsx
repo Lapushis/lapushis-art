@@ -18,7 +18,20 @@ const Footer = () => {
   return (
     <footer className="sticky bottom-0 bg-base-100">
       <div className="container max-w-screen-lg mx-auto p-4 flex justify-between items-center">
-        <p>Made with ❤️ by Lapushis | © {getCopyrightYears()}</p>
+        <p>
+          <span className="hidden sm:inline hover:text-primary">
+            Made with ❤️ by{' '}
+            <a
+              href="https://www.furaffinity.net/user/b1gb4db4t"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              B1G_B4D_B4T
+            </a>{' '}
+            |{' '}
+          </span>
+          © {getCopyrightYears()}
+        </p>
         <nav className="uppercase flex gap-4">
           <a
             className="hover:text-primary flex items-center"
