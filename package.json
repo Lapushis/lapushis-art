@@ -11,6 +11,7 @@
     "preview": "yarn build && yarn vite preview"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "jotai": "^2.8.2",
     "preact": "^10.22.0",
     "preact-iso": "^2.6.3",

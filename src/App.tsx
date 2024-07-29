@@ -7,7 +7,7 @@ export default function () {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-base-200">
       <Header />
-      <div className="flex-grow container max-w-screen-lg mx-auto p-4 bg-base-100 prose">
+      <div className="flex-grow container max-w-screen-lg mx-auto p-4 bg-base-100">
         <LocationProvider>
           <Router>
             <Route path="/" component={Main} />
