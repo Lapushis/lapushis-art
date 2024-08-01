@@ -1,8 +1,25 @@
+import { useLocation } from 'preact-iso'
+
+const usePageName = () => {
+  const location = useLocation()
+
+  switch (location.path) {
+    case '/gallery':
+      return 'Gallery'
+    case '/prices-and-tos':
+      return 'Prices and ToS'
+    default:
+      return ''
+  }
+}
+
 const Logo = () => {
+  const pageName = usePageName()
+
   return (
     <h3 className="text-xl font-bold">
       <a className="uppercase text-3xl" href="/">
-        Lapushis
+        Lapushis {pageName && `| ${pageName}`}
       </a>
     </h3>
   )
@@ -57,7 +74,7 @@ const FixedLink = ({
 
 const Header = () => {
   return (
-    <header className="bg-base-100 sticky top-0">
+    <header className="z-10 bg-base-100 sticky top-0">
       <div className="flex bg-transparent container max-w-screen-lg mx-auto p-4  items-center justify-between">
         <div className="flex items-center">
           <div className="dropdown block lg:none">

@@ -37,7 +37,7 @@ const Images = () => {
 
 const Main = () => {
   return (
-    <>
+    <div className="flex-grow container max-w-screen-lg mx-auto p-4 bg-base-100">
       <Images />
       <div className="flex mt-4">
         <div className=" prose max-w-prose text-lg text-justify">
@@ -65,7 +65,7 @@ const Main = () => {
           <Avatar />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
