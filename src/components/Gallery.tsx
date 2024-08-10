@@ -1,4 +1,5 @@
 import chunk from 'lodash/chunk'
+import { useState } from 'preact/hooks'
 
 const PICTURE_COUNT = 16
 const PICTURES = Array(PICTURE_COUNT)
@@ -7,17 +8,56 @@ const PICTURES = Array(PICTURE_COUNT)
 
 const MAX_COLS = 3
 
-const Grid = ({ images }: { images: string[] }) => {
-  const imageChunks = chunk(images, MAX_COLS)
+const Lightbox = ({
+  image,
+  setImage,
+}: {
+  image: string | null
+  setImage: (image: string | null) => void
+}) => {
+  if (!image) {
+    return null
+  }
 
   return (
     <div
-      class={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${MAX_COLS} gap-4`}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 w-[100vw] h-[100vh] max-w-[100vw] max-h-[100vh]"
+      onClick={() => setImage(null)}
     >
+      <div className="relative flex items-center justify-center">
+        <img
+          src={image}
+          alt=""
+          className="w-full h-full max-w-[100vw] max-h-[100vh] object-scale-down"
+        />
+      </div>
+    </div>
+  )
+}
+
+const Grid = ({
+  images,
+  setImage,
+}: {
+  images: string[]
+  setImage: (image: string) => void
+}) => {
+  const imageChunks = chunk(images, Math.ceil(images.length / MAX_COLS))
+
+  console.log(imageChunks)
+
+  return (
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {imageChunks.map((chunk, chunkIndex) => (
         <div className="grid gap-4" key={`chunk-${chunkIndex}`}>
           {chunk.map((src, index) => (
-            <div className="rounded-lg overflow-hidden" key={`panel-${index}`}>
+            <div
+              className="rounded-lg overflow-hidden"
+              key={`panel-${index}`}
+              onClick={() => {
+                setImage(src)
+              }}
+            >
               <img class="h-full w-full object-cover" src={src} alt="" />
             </div>
           ))}
@@ -28,9 +68,14 @@ const Grid = ({ images }: { images: string[] }) => {
 }
 
 const Gallery = () => {
+  const [image, setImage] = useState<string | null>(null)
+
+  console.log({ image })
+
   return (
     <div className="container max-w-screen-lg mx-auto p-4 bg-base-100">
-      <Grid images={PICTURES} />
+      <Grid images={PICTURES} setImage={setImage} />
+      <Lightbox image={image} setImage={setImage} />
     </div>
   )
 }
