@@ -1,5 +1,3 @@
-@import '@egjs/preact-flicking/dist/flicking.min.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
