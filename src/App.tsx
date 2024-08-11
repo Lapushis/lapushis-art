@@ -1,5 +1,6 @@
 import { LocationProvider, Route, Router } from 'preact-iso'
 
+import AgeModal from 'components/AgeModal'
 import Footer from 'components/Footer'
 import Gallery from 'components/Gallery'
 import Header from 'components/Header'
@@ -9,6 +10,7 @@ import Price from 'components/Price'
 export default function () {
   return (
     <LocationProvider>
+      <AgeModal />
       <div className="min-h-screen flex flex-col justify-between bg-base-200">
         <div className="flex-grow-0">
           <Header />

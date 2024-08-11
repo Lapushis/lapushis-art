@@ -44,8 +44,6 @@ const Grid = ({
 }) => {
   const imageChunks = chunk(images, Math.ceil(images.length / MAX_COLS))
 
-  console.log(imageChunks)
-
   return (
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {imageChunks.map((chunk, chunkIndex) => (
@@ -69,8 +67,6 @@ const Grid = ({
 
 const Gallery = () => {
   const [image, setImage] = useState<string | null>(null)
-
-  console.log({ image })
 
   return (
     <div className="container max-w-screen-lg mx-auto p-4 bg-base-100">
