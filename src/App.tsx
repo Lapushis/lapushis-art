@@ -4,6 +4,7 @@ import Footer from 'components/Footer'
 import Gallery from 'components/Gallery'
 import Header from 'components/Header'
 import Main from 'components/Main'
+import Price from 'components/Price'
 
 export default function () {
   return (
@@ -12,20 +13,15 @@ export default function () {
         <div className="flex-grow-0">
           <Header />
         </div>
-        <div className="flex-grow flex-shrink-0">
-          <Router>
-            <Route path="/" component={Main} />
-            <Route path="/gallery" component={Gallery} />
-            <Route
-              path="/prices-and-tos"
-              component={() => <h1>Prices and TOS</h1>}
-            />
-            <Route
-              default
-              component={() => <Route path="/" component={Main} />}
-            />
-          </Router>
-        </div>
+        <Router>
+          <Route path="/" component={Main} />
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/prices-and-tos" component={Price} />
+          <Route
+            default
+            component={() => <Route path="/" component={Main} />}
+          />
+        </Router>
         <div className="flex-grow-0">
           <Footer />
         </div>
