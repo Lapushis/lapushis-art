@@ -1,4 +1,5 @@
-import { LocationProvider, Route, Router } from 'preact-iso'
+import { Redirect, Route, Router, Switch } from 'wouter-preact'
+import { useHashLocation } from 'wouter-preact/use-hash-location'
 
 import AgeModal from 'components/AgeModal'
 import Footer from 'components/Footer'
@@ -9,25 +10,26 @@ import Price from 'components/Price'
 
 export default function () {
   return (
-    <LocationProvider>
+    <Router hook={useHashLocation}>
       <AgeModal />
       <div className="min-h-screen flex flex-col justify-between bg-base-200">
-        <div className="flex-grow-0">
-          <Header />
-        </div>
-        <Router>
-          <Route path="/" component={Main} />
-          <Route path="/gallery" component={Gallery} />
-          <Route path="/prices-and-tos" component={Price} />
-          <Route
-            default
-            component={() => <Route path="/" component={Main} />}
-          />
-        </Router>
-        <div className="flex-grow-0">
-          <Footer />
-        </div>
+        <Header />
+        <Switch>
+          <Route path="/gallery">
+            <Gallery />
+          </Route>
+          <Route path="/prices-and-tos">
+            <Price />
+          </Route>
+          <Route path="/">
+            <Main />
+          </Route>
+          <Route>
+            <Redirect to="/" />
+          </Route>
+        </Switch>
+        <Footer />
       </div>
-    </LocationProvider>
+    </Router>
   )
 }

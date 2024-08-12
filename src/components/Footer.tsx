@@ -16,7 +16,7 @@ const getCopyrightYears = () => {
 
 const Footer = () => {
   return (
-    <footer className="z-10 sticky bottom-0 bg-base-100">
+    <footer className="flex-grow-0 z-10 sticky bottom-0 bg-base-100">
       <div className="container max-w-screen-lg mx-auto p-4 flex justify-between items-center">
         <p>
           <span className="hidden sm:inline hover:text-primary">

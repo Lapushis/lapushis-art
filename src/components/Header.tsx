@@ -1,9 +1,9 @@
-import { useLocation } from 'preact-iso'
+import { Link, useLocation } from 'wouter-preact'
 
 const usePageName = () => {
-  const location = useLocation()
+  const [path] = useLocation()
 
-  switch (location.path) {
+  switch (path) {
     case '/gallery':
       return 'Gallery'
     case '/prices-and-tos':
@@ -29,14 +29,14 @@ const NavLinksContent = () => {
   return (
     <>
       <li>
-        <a class=" hover:text-primary" href="/gallery">
+        <Link class="hover:text-primary" href="/gallery">
           Gallery
-        </a>
+        </Link>
       </li>
       <li>
-        <a class=" hover:text-primary" href="/prices-and-tos">
+        <Link class="hover:text-primary" href="/prices-and-tos">
           Prices and ToS
-        </a>
+        </Link>
       </li>
     </>
   )
@@ -74,7 +74,7 @@ const FixedLink = ({
 
 const Header = () => {
   return (
-    <header className="z-10 bg-base-100 sticky top-0">
+    <header className="flex-grow-0 z-10 bg-base-100 sticky top-0">
       <div className="flex bg-transparent container max-w-screen-lg mx-auto p-4  items-center justify-between">
         <div className="flex items-center">
           <div className="dropdown block lg:none">

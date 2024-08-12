@@ -35,9 +35,9 @@ const AgeModal = () => {
         <p className="text-xl mb-4">
           You must be over 18 years old to visit this website!
         </p>
-        <div className="modal-action flex justify-between">
+        <div className="modal-action flex flex-col sm:flex-row gap-4 justify-between">
           <a
-            className="btn btn-lg btn-error flex-grow"
+            className="btn btn-lg btn-error flex-grow !m-0"
             href="https://www.google.com"
             target="_self"
             rel="noreferrer"
@@ -45,7 +45,7 @@ const AgeModal = () => {
             Get me outa here!
           </a>
           <button
-            className="btn btn-lg btn-primary flex-grow"
+            className="btn btn-lg btn-primary flex-grow !m-0"
             onClick={() => setAgeRestrictionPass(true)}
           >
             Yep, I'm old enough
