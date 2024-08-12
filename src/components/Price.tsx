@@ -28,12 +28,12 @@ const CommissionTypeCard = ({
         </div>
       </div>
 
-      <figure className="relative bg-secondary">
+      <figure className="relative">
         <div className="rounded-box flex flex-col gap-4 min-[750px]:flex-row  min-[750px]:max-h-[450px]">
           {images.map((src, index) => (
             <div
               key={`image-${index}`}
-              class="rounded-box flex-shrink flex-grow-0 basis-auto max-w-fit"
+              class=" flex-shrink flex-grow-0 basis-auto max-w-fit"
             >
               <img src={src} class="h-full w-full object-cover" />
             </div>

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'preact/hooks'
 import { Link, useLocation } from 'wouter-preact'
 
 const usePageName = () => {
@@ -17,7 +18,7 @@ const Logo = () => {
   const pageName = usePageName()
 
   return (
-    <h3 className="text-xl font-bold">
+    <h3 className="hidden sm:block text-xl font-bold">
       <a className="uppercase text-3xl" href="/">
         Lapushis {pageName && `| ${pageName}`}
       </a>
@@ -28,6 +29,11 @@ const Logo = () => {
 const NavLinksContent = () => {
   return (
     <>
+      <li>
+        <Link class="sm:hidden hover:text-primary" href="/">
+          Main
+        </Link>
+      </li>
       <li>
         <Link class="hover:text-primary" href="/gallery">
           Gallery
@@ -72,13 +78,30 @@ const FixedLink = ({
   )
 }
 
+const useOnLocationChange = (cb: () => void) => {
+  const [path] = useLocation()
+
+  useEffect(() => {
+    cb()
+  }, [path])
+}
+
 const Header = () => {
+  const menuDetailsRef = useRef<HTMLDetailsElement>(null)
+  useOnLocationChange(() => {
+    menuDetailsRef.current?.removeAttribute('open')
+  })
+
   return (
     <header className="flex-grow-0 z-10 bg-base-100 sticky top-0">
       <div className="flex bg-transparent container max-w-screen-lg mx-auto p-4  items-center justify-between">
         <div className="flex items-center">
-          <div className="dropdown block lg:none">
-            <div tabindex={0} role="button" className="btn btn-ghost lg:hidden">
+          <details className="dropdown block lg:none" ref={menuDetailsRef}>
+            <summary
+              tabindex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -93,7 +116,7 @@ const Header = () => {
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
-            </div>
+            </summary>
             <nav>
               <ul
                 tabindex={0}
@@ -102,7 +125,7 @@ const Header = () => {
                 <NavLinksContent />
               </ul>
             </nav>
-          </div>
+          </details>
           <Logo />
         </div>
 
