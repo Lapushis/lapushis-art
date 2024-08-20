@@ -50,7 +50,7 @@ const Main = () => {
           </p>
           <p>
             I use a wide variety of tools including Adobe Photoshop, Blender,
-            ZBrush, Maya and other artistic software. I am always eager to learn
+            ZBrush, Unreal Engine and other artistic software. I am always eager to learn
             more about the tools of my craft, as well as expand on their
             assortment.
           </p>
