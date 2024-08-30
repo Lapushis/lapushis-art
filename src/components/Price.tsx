@@ -3,7 +3,8 @@ interface ICommissionCardProps {
   body: string
   price: string
   images: string[]
-  cardPosition: number
+  moreExamplesLink?: string
+  splitSymbol?: string
 }
 
 const CommissionTypeCard = ({
@@ -11,14 +12,36 @@ const CommissionTypeCard = ({
   body,
   price,
   images,
-  cardPosition,
+  moreExamplesLink,
+  splitSymbol,
 }: ICommissionCardProps) => {
+  const renderBody = splitSymbol ? (
+    body
+      .split(splitSymbol)
+      .map((text) => text.trim())
+      .filter(Boolean)
+      .map((text, index) => (
+        <p className="text-lg my-2" key={`body-${index}`}>
+          {text.trim()}
+        </p>
+      ))
+  ) : (
+    <p className="text-lg">{body}</p>
+  )
+
   return (
     <div className="card bg-base-200 shadow-xl mt-8">
       <div className="card-body flex flex-col md:flex-row justify-between">
         <div className="prose max-w-prose">
           <h2 className="card-title text-3xl">{title}</h2>
-          <p className="text-lg">{body}</p>
+          {renderBody}
+          {moreExamplesLink && (
+            <p className="text-lg">
+              <a href={moreExamplesLink} rel={'noreferrer'} target={'_blank'}>
+                [More examples]
+              </a>
+            </p>
+          )}
         </div>
         <div className="divider md:divider-horizontal justify-self-end" />
         <div>
@@ -47,55 +70,81 @@ const CommissionTypeCard = ({
 const COMMISSION_INFO = [
   {
     title: 'Footshot',
-    body: "Full rendered artwork centered around character's foot/feet. 80$ per 1 picture flat. Max 2 characters per picture. Alt versions with dirt, debris, crushed buildings / micros, etc. are included in the price, as well as simple background.",
+    body: `Full rendered artwork centered around character's foot/feet.
+80$ per 1 picture flat. Max 2 characters per picture.
+Simple background included in the price.`,
     price: '80$',
     images: [
       '/price/footshot1.png',
       '/price/footshot2.png',
       '/price/footshot3.png',
     ],
+    moreExamplesLink:
+      'https://www.furaffinity.net/gallery/lapushis/folder/1398863/Footshot',
+    splitSymbol: '.',
+  },
+  {
+    title: 'Mawshot',
+    body: `Full rendered artwork centered around character's maw.
+100$ per 1 character. Each additional character +40-50$, no more than 2 additional characters (including micros).
+Simple background included in the price.`,
+    price: '100$',
+    images: ['/price/mawshot1.png'],
+    moreExamplesLink:
+      'https://www.furaffinity.net/gallery/lapushis/folder/1450386/Mawshot',
+    splitSymbol: '.',
   },
   {
     title: 'Halfbody',
     body: `Full rendered artwork.
 120-150$ per 1 character depending on design complexity, background included.
 Very complex background +30$.
-Each additional character +80-110$, no more than 2 additional characters. Micro random characters don't count.
-`,
+Each additional character +80-110$, no more than 2 additional characters. Micro random characters don't count.`,
     price: '$120-150',
     images: [
       '/price/halfbody1.png',
       '/price/halfbody2.png',
       '/price/halfbody3.png',
     ],
+    moreExamplesLink:
+      'https://www.furaffinity.net/gallery/lapushis/folder/1398864/Halfbody',
+    splitSymbol: '.',
   },
   {
     title: 'Fullbody',
     body: `Full rendered artwork.
 160-190$ per 1 character depending on design complexity, background included.
 Very complex background +30$.
-Each additional character +140-160$, no more than 2 additional characters. Micro random characters don't count.
-`,
+Each additional character +140-160$, no more than 2 additional characters. Micro random characters don't count.`,
     price: '$160-190',
     images: [
       '/price/fullbody1.png',
       '/price/fullbody2.png',
       '/price/fullbody3.png',
     ],
+    moreExamplesLink:
+      'https://www.furaffinity.net/gallery/lapushis/folder/1398865/Fullbody',
+    splitSymbol: '.',
   },
   {
     title: 'Panorama',
-    body: `You can add a 360° panorama to your commission`,
+    body: `You can add a 360° panorama to your commission for $40.`,
     price: '+$40',
     images: ['/price/panorama1.png'],
+    moreExamplesLink:
+      'https://www.furaffinity.net/gallery/lapushis/folder/1430774/360-Panorama',
   },
   {
     title: 'Extras',
     body: `Alt versions $15 each /
 Panels are $20-40 each, depending on complexity /
-Private commissions + 50% of the total price /`,
+Your specific micro character $30-50 each. Micro random characters don't count /
+Private commissions + 50% of the total price /
+My characters are welcome to be featured in your commissions, but I will not draw them in any type of sexual intercourse (regardless of fetish or topic) /
+Payment plan is available for every type of work (40$ per month minimum installments).`,
     price: 'Price varies',
     images: ['/price/additional1.png', '/price/additional2.png'],
+    splitSymbol: '/',
   },
 ]
 
@@ -125,7 +174,16 @@ const Price = () => {
               target="_blank"
               rel="noreferrer"
             >
-              [FA Notes]
+              [FurAffinity Notes]
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.deviantart.com/lapushis"
+              target="_blank"
+              rel="noreferrer"
+            >
+              [Deviantart]
             </a>
           </li>
           <li>
@@ -157,7 +215,7 @@ const Price = () => {
       </div>
       <div className="divider uppercase text-2xl">Commission types</div>
       {COMMISSION_INFO.map((info, index) => (
-        <CommissionTypeCard {...info} cardPosition={index} />
+        <CommissionTypeCard {...info} key={`card-${index}`} />
       ))}
     </div>
   )
