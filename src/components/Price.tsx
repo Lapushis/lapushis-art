@@ -71,7 +71,7 @@ const COMMISSION_INFO = [
   {
     title: 'Footshot',
     body: `Full rendered artwork centered around character's foot/feet.
-80$ per 1 picture flat. Max 2 characters per picture.
+80$ per 1 character. Max 2 characters per picture.
 Simple background included in the price.`,
     price: '80$',
     images: [
