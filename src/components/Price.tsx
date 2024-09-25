@@ -71,9 +71,9 @@ const COMMISSION_INFO = [
   {
     title: 'Footshot',
     body: `Full rendered artwork centered around character's foot/feet.
-80$ per 1 character. Max 2 characters per picture.
+$100 per 1 character. Max 2 characters per picture.
 Simple background included in the price.`,
-    price: '80$',
+    price: '$100',
     images: [
       '/price/footshot1.png',
       '/price/footshot2.png',
@@ -88,7 +88,7 @@ Simple background included in the price.`,
     body: `Full rendered artwork centered around character's maw.
 100$ per 1 character. Each additional character +40-50$, no more than 2 additional characters (including micros).
 Simple background included in the price.`,
-    price: '100$',
+    price: '$100',
     images: ['/price/mawshot1.png'],
     moreExamplesLink:
       'https://www.furaffinity.net/gallery/lapushis/folder/1450386/Mawshot',
