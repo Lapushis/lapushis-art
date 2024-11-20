@@ -29,7 +29,11 @@ const AgeModal = () => {
   }, [ageRestrictionPass])
 
   return (
-    <dialog id={MODAL_ID} className="modal modal-bottom lg:modal-middle">
+    <dialog
+      id={MODAL_ID}
+      className="modal modal-bottom lg:modal-middle"
+      open={false}
+    >
       <div className="modal-box">
         <h3 className="font-bold text-3xl mb-4">Hold on!</h3>
         <p className="text-xl mb-4">

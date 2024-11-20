@@ -4,7 +4,12 @@ const Avatar = () => {
   return (
     <div class="avatar not-prose p-6">
       <div class="ring-base-content ring-offset-base-100 ring ring-offset-1 w-full rounded-full">
-        <img src="/main/ava.png" />
+        <img
+          src="/main/ava.png"
+          width="357"
+          height="360"
+          alt="my avatar, a picture of anthro bat"
+        />
       </div>
     </div>
   )
@@ -23,12 +28,19 @@ const Images = () => {
       ].map((image, index) => (
         <div
           class={clsx(
-            'flex-1 not-prose max-h-[100rem]',
+            'flex-1',
             index > 2 && 'max-md:hidden',
             index > 3 && 'max-lg:hidden'
           )}
+          key={image}
         >
-          <img src={image} alt="" />
+          <img
+            class="aspect-[1/2]"
+            src={image}
+            alt=""
+            width="238"
+            height="475"
+          />
         </div>
       ))}
     </div>
@@ -50,9 +62,9 @@ const Main = () => {
           </p>
           <p>
             I use a wide variety of tools including Adobe Photoshop, Blender,
-            ZBrush, Unreal Engine and other artistic software. I am always eager to learn
-            more about the tools of my craft, as well as expand on their
-            assortment.
+            ZBrush, Unreal Engine and other artistic software. I am always eager
+            to learn more about the tools of my craft, as well as expand on
+            their assortment.
           </p>
           <p>
             This is my personal website. Here you can check out my gallery of

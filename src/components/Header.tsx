@@ -53,11 +53,17 @@ const FIXED_LINKS_CONTENT = [
     name: 'Kofi',
     link: 'https://ko-fi.com/lapushis',
     img: '/kofi.png',
+    width: 128,
+    height: 128,
+    alt: 'Kofi logo',
   },
   // {
   //   name: 'Patreon',
   //   link: 'https://patreon.com/lapushis',
   //   img: '/patreon.png',
+  //   width: 128,
+  //   height: 128,
+  //   alt: 'Patreon logo',
   // },
 ]
 
@@ -65,14 +71,22 @@ const FixedLink = ({
   name,
   link,
   img,
+  width,
+  height,
+  alt,
 }: {
   name: string
   link: string
   img: string
+  width: number
+  height: number
+  alt: string
 }) => {
   return (
     <a class="flex items-center hover:text-primary" href={link} target="_blank">
-      <img className="h-12" src={img} />
+      <div className="aspect-square max-h-12 ">
+        <img src={img} width={width} height={height} alt={alt} />
+      </div>
       <span className="max-lg:hidden text-xl font-bold ml-2">{name}</span>
     </a>
   )
@@ -136,9 +150,19 @@ const Header = () => {
             </ul>
           </div>
           <div className="flex gap-4 ml-4">
-            {FIXED_LINKS_CONTENT.map(({ name, img, link }) => (
-              <FixedLink key={link} name={name} link={link} img={img} />
-            ))}
+            {FIXED_LINKS_CONTENT.map(
+              ({ name, img, link, width, height, alt }) => (
+                <FixedLink
+                  key={link}
+                  name={name}
+                  link={link}
+                  img={img}
+                  width={width}
+                  height={height}
+                  alt={alt}
+                />
+              )
+            )}
           </div>
         </nav>
       </div>
