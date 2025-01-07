@@ -71,9 +71,9 @@ const COMMISSION_INFO = [
   {
     title: 'Footshot',
     body: `Full rendered artwork centered around character's foot/feet.
-$110 per 1 character. Max 2 characters per picture.
+$130 per 1 character. Max 2 macro characters per picture. Micro random characters don't count and are included for free.
 Simple background included in the price.`,
-    price: '$110',
+    price: '$130',
     images: [
       '/price/footshot1.png',
       '/price/footshot2.png',
@@ -86,9 +86,9 @@ Simple background included in the price.`,
   {
     title: 'Mawshot',
     body: `Full rendered artwork centered around character's maw.
-$100 per 1 character. Each additional character +$70, no more than 2 additional characters (including detailed micros).
+$120 per 1 character. Each additional macro character +$70, no more than 2 additional characters. Micro random characters don't count and are included for free.
 Simple background included in the price.`,
-    price: '$100',
+    price: '$120',
     images: ['/price/mawshot1.png'],
     moreExamplesLink:
       'https://www.furaffinity.net/gallery/lapushis/folder/1450386/Mawshot',
@@ -97,9 +97,9 @@ Simple background included in the price.`,
   {
     title: 'Halfbody',
     body: `Full rendered artwork.
-140$ per 1 character, background included.
-Each additional character +100$, no more than 2 additional characters. Micro random characters don't count.`,
-    price: '$140',
+$160 per 1 character, background included.
+Each additional character +$120, no more than 2 additional macro characters. Micro random characters don't count, and are included for free.`,
+    price: '$160',
     images: [
       '/price/halfbody1.png',
       '/price/halfbody2.png',
@@ -112,9 +112,9 @@ Each additional character +100$, no more than 2 additional characters. Micro ran
   {
     title: 'Fullbody',
     body: `Full rendered artwork.
-$190 per 1 character, background included.
-Each additional character +$190, no more than 2 additional characters. Micro random characters don't count.`,
-    price: '$190',
+$220 per 1 character, background included.
+Each additional macro character +$190, no more than 2 additional macro characters. Micro random characters don't count, and are included for free.`,
+    price: '$220',
     images: [
       '/price/fullbody1.png',
       '/price/fullbody2.png',
