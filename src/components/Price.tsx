@@ -133,17 +133,6 @@ Each additional macro character +$190, no more than 2 additional macro character
       'https://www.furaffinity.net/gallery/lapushis/folder/1430774/360-Panorama',
   },
   {
-    title: 'Discount',
-    body: `10% off if you commissioned me in last 6 months /
-Applies to type and character already commissioned or received through YCH: / 
-e.g. you've ordered halfbody of someone, you get discount for the next halfbody with the same character. / 
-Prior fullbody commission grants discount for footshot and halfbody. /
-Why? I already have your character model for that specific commission type: footshot, halfbody, etc.`,
-    price: '-10%',
-    images: [],
-    splitSymbol: '/',
-  },
-  {
     title: 'Extras',
     body: `Alt versions $15 each /
 Additional panels are $30 each /
