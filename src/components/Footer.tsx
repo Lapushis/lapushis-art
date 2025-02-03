@@ -51,7 +51,7 @@ const Footer = () => {
           </a>
           <a
             className="hover:text-primary flex items-center"
-            href="https://bsky.app/profile/lapushis.bsky.social"
+            href="https://bsky.app/profile/lapushis.art"
             target="_blank"
           >
             <Bluesky className="w-10 h-10 lg:w-6 lg:h-6 fill-current stroke-none inline mr-2" />
