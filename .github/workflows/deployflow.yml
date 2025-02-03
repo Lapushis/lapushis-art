@@ -1,37 +1,50 @@
-name: Build and deploy app
+name: Build and Deploy
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  pages: write
+  id-token: write
+
+env:
+  NODE_VERSION: '20'
+  NODE_OPTIONS: '--max_old_space_size=4096'
+
 jobs:
-  build-and-deploy-app:
-    permissions:
-      pages: write
-      id-token: write
+  build-and-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    env:
-      NODE_OPTIONS: '--max_old_space_size=4096'
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          persist-credentials: false
-      - uses: c-hive/gha-yarn-cache@v2
-      - name: Install modules
-        run: yarn
-        shell: bash
-      - name: Build code
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+      
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+        
+      - name: Build application
         run: yarn build
-        shell: bash
+      
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v4
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: dist
+          
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
