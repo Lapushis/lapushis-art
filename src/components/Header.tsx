@@ -57,14 +57,14 @@ const FIXED_LINKS_CONTENT = [
     height: 128,
     alt: 'Kofi logo',
   },
-  // {
-  //   name: 'Patreon',
-  //   link: 'https://patreon.com/lapushis',
-  //   img: '/patreon.png',
-  //   width: 128,
-  //   height: 128,
-  //   alt: 'Patreon logo',
-  // },
+  {
+    name: 'Patreon',
+    link: 'https://www.patreon.com/c/Lapushis/home',
+    img: '/patreon.png',
+    width: 128,
+    height: 128,
+    alt: 'Patreon logo',
+  },
 ]
 
 const FixedLink = ({
