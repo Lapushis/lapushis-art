@@ -71,9 +71,9 @@ const COMMISSION_INFO = [
   {
     title: 'Footshot',
     body: `Full rendered artwork centered around character's foot/feet.
-$130 per 1 character. Max 2 macro characters per picture. Micro random characters don't count and are included for free.
+$150 per 1 character. Max 2 macro characters per picture. Micro random characters don't count and are included for free.
 Simple background included in the price.`,
-    price: '$130',
+    price: '$150',
     images: [
       '/price/footshot1.png',
       '/price/footshot2.png',
@@ -86,9 +86,9 @@ Simple background included in the price.`,
   {
     title: 'Mawshot',
     body: `Full rendered artwork centered around character's maw.
-$120 per 1 character. Each additional macro character +$70, no more than 2 additional characters. Micro random characters don't count and are included for free.
+$140 per 1 character. Each additional macro character +$70, no more than 2 additional characters. Micro random characters don't count and are included for free.
 Simple background included in the price.`,
-    price: '$120',
+    price: '$140',
     images: ['/price/mawshot1.png'],
     moreExamplesLink:
       'https://www.furaffinity.net/gallery/lapushis/folder/1450386/Mawshot',
@@ -97,9 +97,9 @@ Simple background included in the price.`,
   {
     title: 'Halfbody',
     body: `Full rendered artwork.
-$160 per 1 character, background included.
+$190 per 1 character, background included.
 Each additional character +$120, no more than 2 additional macro characters. Micro random characters don't count, and are included for free.`,
-    price: '$160',
+    price: '$190',
     images: [
       '/price/halfbody1.png',
       '/price/halfbody2.png',
@@ -112,9 +112,9 @@ Each additional character +$120, no more than 2 additional macro characters. Mic
   {
     title: 'Fullbody',
     body: `Full rendered artwork.
-$220 per 1 character, background included.
-Each additional macro character +$190, no more than 2 additional macro characters. Micro random characters don't count, and are included for free.`,
-    price: '$220',
+$250 per 1 character, background included.
+Each additional macro character +$200, no more than 2 additional macro characters. Micro random characters don't count, and are included for free.`,
+    price: '$250',
     images: [
       '/price/fullbody1.png',
       '/price/fullbody2.png',
@@ -126,22 +126,23 @@ Each additional macro character +$190, no more than 2 additional macro character
   },
   {
     title: 'Panorama',
-    body: `You can add a 360° panorama to your commission for $50.`,
-    price: '+$50',
+    body: `You can add a 360° panorama to your commission for $60.`,
+    price: '+$60',
     images: ['/price/panorama1.png'],
     moreExamplesLink:
       'https://www.furaffinity.net/gallery/lapushis/folder/1430774/360-Panorama',
   },
   {
     title: 'Extras',
-    body: `Alt versions $15 each /
-Additional panels are $30 each /
-Your specific micro character $30 each. Micro random characters don't count /
+    body: `Minor alt versions $20 each (add dirt, sweat, blood, etc). /
+Major alt versions 100$ each - changing the character with the same pose and background. Example: /
+Additional panels are $40 each /
+Your specific micro character $40 each. Micro random characters don't count /
 Private commissions +50% of the total price /
-Mecha or characters with complex armor +$20 / 
-Very complex background +$30 / 
+Mecha or characters with complex armor +$40 / 
+Very complex background +$40 / 
 My characters are welcome to be featured in your commissions, but I will not draw them in any type of sexual intercourse (regardless of fetish or topic) /
-Payment plan is available for every type of work (40$ per month minimum installments).`,
+Payment plan is available for every type of work (3 month maximum).	`,
     price: 'Price varies',
     images: ['/price/additional1.png', '/price/additional2.png'],
     splitSymbol: '/',
